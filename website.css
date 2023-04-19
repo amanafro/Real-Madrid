@@ -204,6 +204,7 @@ body {
   image-resolution: 1;
   width: 100%;
   object-fit: cover;
+  background-color: #dddddd;
 }
 
 .form-class {
@@ -248,7 +249,7 @@ input {
 .kits,
 .training {
   display: grid;
-  gap: 0.125rem;
+  gap: 0.5rem;
   grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
 }
 
@@ -262,6 +263,7 @@ input {
   font-size: 1.5rem;
   position: relative;
   background-color: #dddddd;
+  margin-bottom: 1rem;
 }
 
 .price {
@@ -275,7 +277,7 @@ input {
 }
 
 .name {
-  color: #bf00ff;
+  color: #fb00ff;
 }
 
 .mobile-nav .sign-in {
