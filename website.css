@@ -21,9 +21,14 @@ body {
 }
 
 .logo {
-  width: 5rem;
+  width: 6rem;
   padding-bottom: 0rem;
   padding-left: 1rem;
+}
+
+.fav {
+  width: .5px;
+  height: 1px;
 }
 
 .nav-header {
