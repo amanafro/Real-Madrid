@@ -1,7 +1,29 @@
-const menu_btn = document.querySelector(".toggle");
-const mobile_menu = document.querySelector(".mobile-nav");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-menu_btn.addEventListener("click", function () {
-  menu_btn.classList.toggle("is-active");
-  mobile_menu.classList.toggle("is-active");
-});
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+};

@@ -3,6 +3,10 @@ html {
   font-size: 100%;
 }
 
+.hi {
+  color: green;
+}
+
 *,
 *:before,
 *:after {
@@ -11,6 +15,7 @@ html {
 
 body {
   padding: 0;
+  margin: 0;
   background-color: #ffffff;
   color: #000000;
   font-family: "Poppins", sans-serif;
@@ -21,7 +26,7 @@ h1 {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 2.65rem;
+  font-size: 2rem;
 }
 
 p {
@@ -37,7 +42,7 @@ h3 {
 }
 
 .logo {
-  width: 6rem;
+  width: 4rem;
   padding-bottom: 0rem;
   padding-left: 1rem;
 }
@@ -50,116 +55,129 @@ h3 {
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  box-shadow: 0px 1.5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1.5px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* primary-navbar*/
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 999;
+}
 
 .navbar {
-  margin: 0;
-}
-
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  display: block;
-  top: 0;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
 }
 
 .navbar li {
-  float: left;
   list-style: none;
+  padding: 0 2rem;
 }
 
-.navbar li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 2rem 1rem;
+.navbar a {
+  color: #000000;
   text-decoration: none;
-  margin: 0 1.5rem 0 0;
+  font-weight: 400;
+  transition: 0.4s ease-in-out;
 }
 
-.navbar li :hover {
-  background-color: #efc3f0;
-  border-radius: 1.5rem;
+.navbar a:hover {
+  color: rgba(229, 138, 234, 0.511);
+  font-size: 1.4rem;
 }
 
-.navbar.navbar-scrolled {
-  top: 0;
+.hamburger {
+  display: none;
 }
 
-/* mobile nav*/
-
-.mobile-nav {
-  position:fixed;
-  top:0;
-  left:100%;
-  width:100%;
-  min-height:100vh;
-  display:block;
-  z-index:98;
-  background-color:hsla(0, 0%, 80%, 0.7);
-  backdrop-filter: blur(1.5rem);
-  padding-top:20rem;
-  -webkit-transition:0.4s;
-  transition:0.4s
-}
-
-.mobile-nav li {
-  list-style: none;
-}
-
-.mobile-nav li a {
-  flex-direction: column;
+.bar {
   display: block;
-  color: black;
-  margin: 2rem;
-  text-align: center;
-  padding: 2rem;
-  text-decoration: none;
-  font-size: 3rem;
-  font-weight:bold ;
-}
-  
-.mobile-nav.is-active {
-  left:0
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
 }
 
-.toggle {
-  position:absolute;
-  display:none;
-  right: 3rem;
-  width:4rem;
-  height: 2rem;
-  z-index: 99;
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.toggle .bar,.toggle::after,.toggle:before{
-  content:'';
-  display:block;
-  width: 65px;
-  height: .6rem;
-  background-color:#000;
-  margin:6px 0px;
-  -webkit-transition:0.4s;
-  transition:0.4s ease
+.nav-item {
+  margin-left: 5rem;
 }
-  
-.toggle.is-active:before{
-  transform:rotate(-45deg) translate(-10px, 10px)
+
+@media only screen and (max-width: 1020px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 4.5rem;
+    padding: 3rem;
+    flex-direction: column;
+    background-color: #ececec;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu li {
+    padding: 1rem;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .logo {
+    width: 4rem;
+    padding-top: 0rem;
+    padding-left: 2rem;
+  }
+
+  .name {
+    font-size: 1.6rem;
+  }
+
+  input {
+    touch-action: manipulation;
+    font-size: 3rem;
+  }
+
+  .reset {
+    width: 12rem;
+    height: 4rem;
+    font-size: 3rem;
+  }
 }
-  
-.toggle.is-active:after{
-  transform:rotate(45deg) translate(-10px, -10px)
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
 }
-  
-.toggle.is-active .bar{
-  opacity:0;
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /*legends*/
@@ -168,8 +186,8 @@ h3 {
   display: grid;
   justify-content: center;
   gap: 0.1rem;
-  margin:2rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  margin: rem;
+  grid-template-columns: repeat(auto-fit, minmax(27.489rem, 1fr));
 }
 
 .legend {
@@ -189,8 +207,8 @@ h3 {
   display: grid;
   justify-content: center;
   gap: 0.15rem;
-  margin:2rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  margin: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }
 
 .cwc,
@@ -229,7 +247,7 @@ h3 {
 .best-games {
   display: grid;
   gap: 1.5rem;
-  margin:2rem;
+  margin: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(28.5rem, 1fr));
 }
 
@@ -241,7 +259,6 @@ h3 {
   padding: 2rem;
   justify-content: center;
   box-shadow: 1px 1px 1px 1px rgba(229, 138, 234, 0.511);
-  text-align: center;
   border-radius: 2rem;
   background-color: #dddddd;
 }
@@ -295,7 +312,7 @@ input {
   display: grid;
   gap: 0.235rem;
   margin: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
 
 .kit,
@@ -315,62 +332,11 @@ input {
   bottom: 5rem;
   right: 1rem;
   background-color: hsla(0, 0%, 7%, 0.7);
-  width: 5rem;
+  width: 3rem;
   color: #ffffff;
   border-radius: 0.5rem;
 }
 
 .name {
   color: #fb00ff;
-}
-
-
-/*table and phone*/
-@media (max-width: 1020px) {
-  /* phone/table-navbar*/
-
-  .navbar {
-    display: none;
-  }
-
-  .toggle {
-    display: block;
-  }
-
-  .logo {
-    width: 6rem;
-    padding-top: 0rem;
-    padding-left: 2rem;
-  }
-
-  .name {
-    font-size: 1.6rem;
-  }
-
-  .form {
-    display: flex;
-    margin-top: 5rem;
-    box-shadow: 1px 1px 1px 1px rgba(229, 138, 234, 0.511);
-    background-color: #dddddd;
-    width: 52rem;
-    border-radius: 2rem;
-    height: 75rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 4rem;
-  }
-
-  input {
-    touch-action: manipulation;
-    font-size: 3rem;
-    width: 40rem;
-    height: 8rem;
-  }
-
-  .reset {
-    width: 12rem;
-    height: 4rem;
-    font-size: 3rem;
-  }
 }
