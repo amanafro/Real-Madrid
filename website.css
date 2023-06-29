@@ -24,6 +24,7 @@ html {
 
 body {
   padding: 0;
+
   background-color: #fff;
   color: #000000;
   font-family: "Poppins", sans-serif;
@@ -31,6 +32,12 @@ body {
   height: -webkit-fill-available;
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
+}
+
+p,
+li,
+a {
+  font-size: medium;
 }
 
 p {
@@ -41,7 +48,7 @@ p {
 h1,
 h2,
 h3 {
-  margin: 2rem 2rem 2rem 0;
+  margin: 2rem 2rem 0 2rem;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -51,7 +58,7 @@ h3 {
   width: 3rem;
   margin: 2.5px;
   padding-bottom: 0rem;
-  padding-left: 1px;
+  padding-left: 1rem;
 }
 
 .header {
@@ -84,7 +91,7 @@ h3 {
 
 .navbar a:hover {
   color: rgba(229, 138, 234, 0.511);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   transition: 0.3s ease-in-out;
 }
 
@@ -119,12 +126,12 @@ h3 {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 768px) {
   .nav-menu {
     position: fixed;
     left: -100%;
     z-index: 999;
-    top: 2.8rem;
+    top: 3.25rem;
     flex-direction: column;
     background-color: #fff;
     width: 100%;
@@ -135,11 +142,18 @@ h3 {
   }
 
   .nav-menu li {
+    margin-top: 2rem;
     padding: 1rem;
   }
 
   .nav-menu.active {
     left: 0;
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 0.5rem;
+    z-index: 999;
   }
 
   .nav-item {
@@ -149,12 +163,7 @@ h3 {
   .hamburger {
     display: block;
     cursor: pointer;
-  }
-
-  .logo {
-    width: 2rem;
-    padding-bottom: 0rem;
-    padding-left: 1px;
+    padding-right: 1rem;
   }
 
   input {
@@ -163,10 +172,8 @@ h3 {
   }
 
   .reset {
-    width: 5rem;
-    height: 4rem;
     font-size: 3rem;
-    background-color: #000000;
+    background-color: #fff;
   }
 }
 
@@ -176,8 +183,7 @@ h3 {
   display: grid;
   justify-content: center;
   gap: 0.1rem;
-  margin: -2rem;
-  grid-template-columns: repeat(auto-fit, minmax(30.5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 0.8fr));
 }
 
 .legend {
@@ -191,11 +197,8 @@ h3 {
 /*accomplishments*/
 
 .accomplishments {
-  display: grid;
-  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
 }
-
 
 .cwc,
 .laliga,
@@ -207,7 +210,6 @@ h3 {
 }
 
 .images {
-  margin: 1rem;
   image-resolution: 1;
   width: 100%;
   object-fit: cover;
@@ -320,9 +322,8 @@ input {
 }
 
 .name {
+  background-color:#ddd ;
   color: #fb00ff;
   width: 100%;
-  padding: 0;
-  margin: 0;
   height: auto;
 }
