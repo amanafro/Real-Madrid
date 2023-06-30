@@ -127,6 +127,9 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  body.nav-menu.active {
+    overflow: hidden;
+  }
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -175,6 +178,83 @@ h3 {
     font-size: 3rem;
     background-color: #fff;
   }
+
+  .cwc,
+  .laliga,
+  .ucl {
+    height: 50rem;
+  }
+
+  .left-sidebar,
+  .section-1,
+  .section-2 {
+    width: 100%;
+  }
+
+  .images {
+    image-resolution: 1;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .images-1 {
+    float: left;
+    width: 400px;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  .images-1-1 {
+  }
+
+  .images-2 {
+    float: right;
+    width: 400px;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  .images-2-1 {
+  }
+}
+
+/*home & about*/
+
+.abt {
+  display: grid;
+  padding: 1rem;
+  text-align: center;
+}
+
+.about {
+  display: grid;
+  padding: 1rem;
+  text-align: center;
+}
+
+.column {
+  padding: 1px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.left-sidebar {
+  float: left;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.section-1,
+.section-2 {
+  float: right;
+  width: 70%;
+  padding: 1px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*legends*/
@@ -182,52 +262,52 @@ h3 {
 .legends {
   display: grid;
   justify-content: center;
-  gap: 0.1rem;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 0.8fr));
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 }
 
 .legend {
-  padding: 2rem;
-  border-radius: 2rem;
+  padding: 1px;
   justify-content: center;
   text-align: center;
   flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*accomplishments*/
 
 .accomplishments {
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 0.8fr));
 }
 
 .cwc,
 .laliga,
 .ucl {
-  padding: 2rem;
-  border-radius: 2rem;
+  height: 55rem;
   text-align: center;
   flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.images {
-  image-resolution: 1;
-  width: 100%;
-  object-fit: cover;
+.accomplishments {
+  padding: 0 16px;
 }
 
-/*home & about*/
-
-.home,
-.about {
-  display: grid;
-  padding: 1rem;
-  width: auto;
-  text-align: center;
-  border-radius: 2rem;
+.accomplishments::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
+
+/* history */
 
 .best-games {
   display: grid;
+  justify-content: center;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
@@ -237,93 +317,35 @@ h3 {
 .Copa,
 .ucl2014,
 .ucl2017 {
-  padding: 2rem;
+  padding: 1px;
   justify-content: center;
-  border-radius: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/*sign-in*/
+/* generell */
 
-.form-class {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.form {
-  margin-top: 1rem;
-  margin-bottom: 4rem;
-  display: flex;
-  box-shadow: 1px 1px 1px 1px rgba(229, 138, 234, 0.511);
-  background-color: #dddddd;
-  border-radius: 1rem;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.reset {
-  box-shadow: 1px 1px 1px 1px rgba(229, 138, 234, 0.511);
-  width: 6rem;
-  height: 3rem;
-  margin: 0.5rem;
-  border-radius: 0.4rem;
-  border: none;
-  font-size: 1.5rem;
-}
-
-input {
-  width: 20rem;
-  height: 3rem;
-  box-shadow: 1px 1px 1px 1px rgba(229, 138, 234, 0.511);
-  border: none;
-  border-radius: 0.4rem;
-  font-size: 1.5rem;
-}
-
-/*shop*/
-
-.kits,
-.training {
-  display: grid;
-  gap: 0.235rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-}
-
-.kit,
-.train {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  font-size: 1.5rem;
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.description {
-  background-color: #000;
-}
-
-.price {
-  position: absolute;
-  font-size: 1rem;
-  bottom: 4rem;
-  left: 13.5rem;
-  background-color: hsla(0, 0%, 7%, 0.7);
-  width: 3rem;
-  color: #ffffff;
-  border-radius: 0.5rem;
-}
-
-.name {
-  background-color:#ddd ;
-  color: #fb00ff;
+.images {
+  image-resolution: 1;
   width: 100%;
-  height: auto;
+  object-fit: cover;
+}
+
+.images-1 {
+  float: left;
+  width: 400px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.images-1-1 {
+}
+
+.images-2 {
+  float: right;
+  width: 400px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.images-2-1 {
 }
