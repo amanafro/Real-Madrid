@@ -1,37 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
 
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-blueblack: hsl(245, 58%, 11%);
+  --color-golden: hsl(58, 99%, 37%);
+}
+
 html {
   box-sizing: border-box;
   font-size: 100%;
-  height: -webkit-fill-available;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.hi {
-  color: green;
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   padding: 0;
-
-  background-color: #fff;
-  color: #000000;
-  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  height: -webkit-fill-available;
-  font-size: 62.5%;
-  font-family: "Roboto", sans-serif;
+  color-scheme: light dark;
 }
 
 p,
@@ -40,18 +33,27 @@ a {
   font-size: medium;
 }
 
-p {
-  margin: 2rem;
-  text-align: center;
-}
-
 h1,
 h2,
 h3 {
-  margin: 2rem 2rem 0 2rem;
+  margin: 1.5rem;
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+image {
+  max-width: 100%;
+  display: block;
+}
+
+/* <----navbar---->*/
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 0 27px 0 rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -59,15 +61,6 @@ h3 {
   margin: 2.5px;
   padding-bottom: 0rem;
   padding-left: 1rem;
-}
-
-.header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  z-index: 999;
-  box-shadow: 0 0 27px 0 rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
@@ -83,20 +76,30 @@ h3 {
 }
 
 .navbar a {
-  color: #000000;
   text-decoration: none;
   font-weight: 400;
-  transition: 0.4s ease-in-out;
 }
 
 .navbar a:hover {
-  color: rgba(229, 138, 234, 0.511);
-  font-size: 1.25rem;
+  color: rgba(8, 11, 113, 0.511);
+  font-size: 2rem;
   transition: 0.3s ease-in-out;
 }
 
 .hamburger {
   display: none;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .bar {
@@ -114,19 +117,259 @@ h3 {
   align-items: center;
 }
 
-.hamburger.active .bar:nth-child(2) {
-  opacity: 0;
+/*home*/
+.home {
+  display: grid;
+  flex-direction: column;
+  align-self: flex-end;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  margin-inline: 2rem;
 }
 
-.hamburger.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.sidebar {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1/2;
 }
 
-.hamburger.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+.left-sidebar {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
+.right-sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-1,
+.section-2 {
+  background-color: var(--color-golden);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* about */
+.abt {
+  display: grid;
+  padding: 1rem;
+  text-align: center;
+}
+
+.about {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.page-1,
+.page-2 {
+  margin-inline: 2rem;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 1rem 1rem;
+}
+
+/*legends*/
+.legends {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+}
+
+.legend {
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 1rem 1rem;
+  margin: 2rem;
+}
+
+/*accomplishments*/
+.accomplishments {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+  margin-inline: 2rem;
+}
+
+.accomplishments::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.cwc,
+.laliga,
+.ucl {
+  text-align: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 1rem 1rem;
+}
+
+/* history */
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: rgb(62, 58, 58);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -1.5em;
+  background-color: white;
+  border: 4px solid #ff9f55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* The actual content */
+.content {
+  background-color: var(--color-golden);
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.content:hover {
+  background-color: rgba(44, 27, 27, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.content-text {
+  padding: 1.75rem;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--color-golden);
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--color-golden) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -1rem;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 40em) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 25px;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 40%;
+    background-color: medium solid rgb(92, 92, 92);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 1rem;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+/* generell */
+.images,
+.perez_2021,
+.bernabeu_2024,
+.papa_perez,
+.bernabeu_2010 {
+  width: 100%;
+  image-resolution: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 48em) {
+  .image,
+  .text {
+    flex-basis: 100%;
+    order: unset;
+  }
   body.nav-menu.active {
     overflow: hidden;
   }
@@ -138,214 +381,81 @@ h3 {
     flex-direction: column;
     background-color: #fff;
     width: 100%;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 1.5rem 1.5rem;
     text-align: center;
     transition: 0.3s ease-in-out;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.511);
+    box-shadow: 0 0 0.3rem 0 rgba(0, 0, 0, 0.511);
   }
-
   .nav-menu li {
     margin-top: 2rem;
     padding: 1rem;
   }
-
   .nav-menu.active {
     left: 0;
   }
-
   .hamburger {
     position: absolute;
     right: 0.5rem;
     z-index: 999;
   }
-
   .nav-item {
     margin: 2.5rem 0;
   }
-
   .hamburger {
     display: block;
     cursor: pointer;
     padding-right: 1rem;
   }
-
   input {
     touch-action: manipulation;
     font-size: 1.5rem;
   }
-
   .reset {
     font-size: 3rem;
     background-color: #fff;
   }
+}
 
-  .cwc,
-  .laliga,
-  .ucl {
-    height: 50rem;
-  }
+.footer {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-gap: 1.5rem;
+  justify-items: center;
+  margin: auto;
+}
 
-  .left-sidebar,
-  .section-1,
-  .section-2 {
-    width: 100%;
-  }
-
-  .images {
-    image-resolution: 1;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .images-1 {
-    float: left;
-    width: 400px;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-
-  .images-1-1 {
-  }
-
-  .images-2 {
-    float: right;
-    width: 400px;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-
-  .images-2-1 {
+@media (min-width: 40em) {
+  .container ul {
+    grid-auto-flow: column;
+    list-style: none;
   }
 }
 
-/*home & about*/
-
-.abt {
-  display: grid;
-  padding: 1rem;
-  text-align: center;
+.footer li:last-child {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
-.about {
-  display: grid;
-  padding: 1rem;
-  text-align: center;
-}
+/* below is just for demo styling */
 
-.column {
-  padding: 1px;
-  justify-content: center;
-  text-align: center;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.left-sidebar {
-  float: left;
-  width: 30%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.section-1,
-.section-2 {
-  float: right;
-  width: 70%;
-  padding: 1px;
-  justify-content: center;
-  text-align: center;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-/*legends*/
-
-.legends {
-  display: grid;
-  justify-content: center;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-}
-
-.legend {
-  padding: 1px;
-  justify-content: center;
-  text-align: center;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-/*accomplishments*/
-
-.accomplishments {
-  display: grid;
-  gap: 1rem;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 0.8fr));
-}
-
-.cwc,
-.laliga,
-.ucl {
-  height: 55rem;
-  text-align: center;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.accomplishments {
-  padding: 0 16px;
-}
-
-.accomplishments::after,
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* history */
-
-.best-games {
-  display: grid;
-  justify-content: center;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-}
-
-.supercup2017,
-.elcasico2012,
-.Copa,
-.ucl2014,
-.ucl2017 {
-  padding: 1px;
-  justify-content: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* generell */
-
-.images {
-  image-resolution: 1;
+.footer-section {
+  margin-top: 2rem;
+  display: flex;
+  height: 20vh;
   width: 100%;
-  object-fit: cover;
+  background-color: var(--color-blueblack);
+  line-height: 1.3;
 }
 
-.images-1 {
-  float: left;
-  width: 400px;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.images-1-1 {
-}
-
-.images-2 {
-  float: right;
-  width: 400px;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.images-2-1 {
+@keyframes wave-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
 }
